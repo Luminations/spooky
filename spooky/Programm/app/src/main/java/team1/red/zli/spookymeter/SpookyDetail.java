@@ -19,11 +19,18 @@ public class SpookyDetail extends Activity{
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-
-            ProgressBar progressBar = findViewById(R.id.progressBar2);
-            progressBar.setMax(30);
             ArrayList<Integer> spookyDetails = (ArrayList<Integer>) msg.obj;
-            progressBar.setProgress(spookyDetails.get(5));
+
+            ProgressBar timeProgress = findViewById(R.id.progressBar2);
+            timeProgress.setMax(30);
+            timeProgress.setProgress(spookyDetails.get(5));
+
+            TextView timeText = findViewById(R.id.textView3);
+            timeText.setText("Time " + spookyDetails.get(5) + "/12");
+
+            ProgressBar dateProgres = findViewById(R.id.progressBar4);
+            dateProgres.setMax(30);
+            dateProgres.setProgress(spookyDetails.get(4));
         }
     };
 
