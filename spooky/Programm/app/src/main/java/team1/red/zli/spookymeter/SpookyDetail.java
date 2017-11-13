@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -17,6 +20,10 @@ public class SpookyDetail extends Activity{
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
+            ProgressBar progressBar = findViewById(R.id.progressBar2);
+            progressBar.setMax(30);
+            ArrayList<Integer> spookyDetails = (ArrayList<Integer>) msg.obj;
+            progressBar.setProgress(spookyDetails.get(5));
         }
     };
 

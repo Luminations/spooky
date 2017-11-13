@@ -20,9 +20,11 @@ public class SpookyThread extends Thread{
 
     Handler handler;
     ArrayList<SpookyFactor> spookyFactors;
+    ArrayList<Integer> spookyDetails;
     int spookyness;
     SpookyThread(Handler handler) {
         this.handler = handler;
+        spookyDetails = new ArrayList<>();
         spookyFactors = new ArrayList<>();
         spookyFactors.add(new BatteryLifetime());
         spookyFactors.add(new Darkness());
@@ -38,10 +40,12 @@ public class SpookyThread extends Thread{
             spookyness = 0;
 
             for (int i = 0; i < spookyFactors.size(); i++){
-                spookyness += spookyFactors.get(i).getSpookyFactor();
+                int spookyAmount = spookyFactors.get(i).getSpookyFactor();
+                spookyness += spookyAmount;
+                spookyDetails.add(spookyAmount);
             }
 
-            handler.obtainMessage(spookyness).sendToTarget();
+            handler.obtainMessage(spookyness, spookyDetails).sendToTarget();
             try {
                 this.sleep(50);
             } catch (Exception e) {
