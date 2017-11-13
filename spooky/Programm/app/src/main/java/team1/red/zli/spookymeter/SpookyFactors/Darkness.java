@@ -12,6 +12,6 @@ public class Darkness implements SpookyFactor {
 
     @Override
     public String name() {
-        return null;
+        return "Darkness";
     }
 }

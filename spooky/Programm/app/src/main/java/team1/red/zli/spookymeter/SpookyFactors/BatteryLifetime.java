@@ -12,6 +12,6 @@ public class BatteryLifetime implements SpookyFactor {
 
     @Override
     public String name() {
-        return null;
+        return "Battery Lifetime";
     }
 }

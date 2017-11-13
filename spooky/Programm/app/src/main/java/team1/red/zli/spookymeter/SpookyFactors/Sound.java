@@ -12,6 +12,6 @@ public class Sound implements SpookyFactor {
 
     @Override
     public String name() {
-        return null;
+        return "Sound";
     }
 }
