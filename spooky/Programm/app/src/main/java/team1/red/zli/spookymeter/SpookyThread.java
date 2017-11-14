@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 import team1.red.zli.spookymeter.SpookyFactors.BatteryLifetime;
 import team1.red.zli.spookymeter.SpookyFactors.Darkness;
-import team1.red.zli.spookymeter.SpookyFactors.Location;
 import team1.red.zli.spookymeter.SpookyFactors.Sound;
 import team1.red.zli.spookymeter.SpookyFactors.SpookyDate;
 import team1.red.zli.spookymeter.SpookyFactors.SpookyFactor;
+import team1.red.zli.spookymeter.SpookyFactors.SpookyLocation;
 import team1.red.zli.spookymeter.SpookyFactors.Time;
 
 /**
@@ -31,7 +31,7 @@ public class SpookyThread extends Thread{
         spookyFactors = new ArrayList<>();
         spookyFactors.add(new BatteryLifetime());
         spookyFactors.add(new Darkness());
-        spookyFactors.add(new Location());
+        spookyFactors.add(new SpookyLocation());
         spookyFactors.add(new Sound());
         spookyFactors.add(new SpookyDate());
         spookyFactors.add(new Time());
