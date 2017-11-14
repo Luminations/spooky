@@ -1,8 +1,12 @@
 package team1.red.zli.spookymeter;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +18,8 @@ import java.util.ArrayList;
 import team1.red.zli.spookymeter.SpookyFactors.SpookyFactor;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 2323;
+
     private final Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -31,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
+                MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+
 
         Button next = (Button) findViewById(R.id.button2);
         next.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +51,32 @@ public class MainActivity extends AppCompatActivity {
         });
         SpookyThread spookyFactorThread = new SpookyThread(handler, this);
         spookyFactorThread.start();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
+                if (grantResults.length > 0) {
+
+                    for (int i : grantResults){
+                        if(i == PackageManager.PERMISSION_GRANTED){
+
+                        }
+                    }
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                return;
+            }
+        }
     }
 }
 
