@@ -21,6 +21,11 @@ public class SpookyDetail extends Activity{
             super.handleMessage(msg);
             ArrayList<Integer> spookyDetails = (ArrayList<Integer>) msg.obj;
 
+            //Title
+
+            TextView titleText = findViewById(R.id.textView4);
+            titleText.setText("Spooky Details!");
+
             //time
             ProgressBar timeProgress = findViewById(R.id.progressBar2);
             timeProgress.setMax(12);
