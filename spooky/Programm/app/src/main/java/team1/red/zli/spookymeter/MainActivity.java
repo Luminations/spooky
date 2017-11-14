@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(myIntent, 0);
             }
         });
-        SpookyThread spookyFactorThread = new SpookyThread(handler);
+        SpookyThread spookyFactorThread = new SpookyThread(handler, this);
         spookyFactorThread.start();
     }
 }
