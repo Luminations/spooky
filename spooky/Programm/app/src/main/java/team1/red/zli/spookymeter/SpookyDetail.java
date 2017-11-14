@@ -36,6 +36,14 @@ public class SpookyDetail extends Activity{
 
             TextView dateText = findViewById(R.id.textView5);
             dateText.setText("Date " + spookyDetails.get(4) + "/" + "7");
+
+            //battery
+            ProgressBar batteryProgress = findViewById(R.id.progressBar);
+            batteryProgress.setMax(10);
+            batteryProgress.setProgress(spookyDetails.get(0));
+
+            TextView batteryText = findViewById(R.id.textView2);
+            batteryText.setText("Battery " + spookyDetails.get(0) + "/" + "10");
         }
     };
 
