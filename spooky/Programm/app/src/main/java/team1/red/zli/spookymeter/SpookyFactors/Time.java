@@ -18,7 +18,7 @@ public class Time implements SpookyFactor {
         c.set(Calendar.SECOND, 0);
         c.set(Calendar.MILLISECOND, 0);
         long howMany = (c.getTimeInMillis()-System.currentTimeMillis());
-        int time = (int) (12 -(((howMany / 1000) / 60) / 60));
+        int time = (int) (72 -(((howMany / 1000) / 60) / 10));
         if (time < 0) time *= -1;
         return time;
     }

@@ -12,7 +12,7 @@ import android.hardware.SensorManager;
  * Created by admin on 13.11.2017.
  */
 
-public class Darkness extends Activity implements SpookyFactor {
+public class Darkness implements SpookyFactor {
     public int value = 0;
 
     @Override
@@ -48,6 +48,9 @@ public class Darkness extends Activity implements SpookyFactor {
 
             if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
                 float currentReading = event.values[0];
+                if(currentReading == 0){
+                    currentReading = 1;
+                }
                 value = (int) (100/currentReading);
             }
         }

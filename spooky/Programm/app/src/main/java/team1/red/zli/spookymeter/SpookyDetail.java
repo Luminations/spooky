@@ -23,11 +23,11 @@ public class SpookyDetail extends Activity{
 
             //time
             ProgressBar timeProgress = findViewById(R.id.progressBar2);
-            timeProgress.setMax(12);
+            timeProgress.setMax(72);
             timeProgress.setProgress(spookyDetails.get(5));
 
             TextView timeText = findViewById(R.id.textView3);
-            timeText.setText("Time " + spookyDetails.get(5) + "/" + "12");
+            timeText.setText("Time " + spookyDetails.get(5) + "/" + "72");
 
             //date
             ProgressBar dateProgres = findViewById(R.id.progressBar4);
@@ -39,11 +39,11 @@ public class SpookyDetail extends Activity{
 
             //battery
             ProgressBar batteryProgress = findViewById(R.id.progressBar);
-            batteryProgress.setMax(10);
+            batteryProgress.setMax(100);
             batteryProgress.setProgress(spookyDetails.get(0));
 
             TextView batteryText = findViewById(R.id.textView2);
-            batteryText.setText("Battery " + spookyDetails.get(0) + "/" + "10");
+            batteryText.setText("Battery " + spookyDetails.get(0) + "/" + "100");
         }
     };
 
