@@ -12,7 +12,7 @@ import android.hardware.SensorManager;
  * Created by admin on 13.11.2017.
  */
 
-public class Darkness extends Activity implements SpookyFactor {
+public class Darkness implements SpookyFactor {
     public int value = 0;
 
     @Override
