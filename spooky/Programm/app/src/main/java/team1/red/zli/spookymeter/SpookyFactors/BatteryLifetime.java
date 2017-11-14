@@ -19,7 +19,7 @@ public class BatteryLifetime implements SpookyFactor {
         int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
 
 
-        return 0;
+        return 100 - level;
     }
 
     @Override
