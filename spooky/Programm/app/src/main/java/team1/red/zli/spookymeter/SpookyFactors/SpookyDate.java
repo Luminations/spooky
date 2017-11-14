@@ -17,7 +17,7 @@ public class SpookyDate implements SpookyFactor {
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM");
         String date = sdf.format(currentTime);
-        String[] spookyDates = {"31.10", "11.9", "1.12", /* This is today -> */"13.11"};
+        String[] spookyDates = {"31.10", "11.9", "1.12", /* This was today -> */"13.11"};
         for (String thisArray : spookyDates) {
             if(thisArray.compareTo(date) == 0){
                 spookyFactor = 7;
