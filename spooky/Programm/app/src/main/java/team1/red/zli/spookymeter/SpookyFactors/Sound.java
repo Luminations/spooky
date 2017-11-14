@@ -1,12 +1,14 @@
 package team1.red.zli.spookymeter.SpookyFactors;
 
+import android.content.Context;
+
 /**
  * Created by admin on 13.11.2017.
  */
 
 public class Sound implements SpookyFactor {
     @Override
-    public int getSpookyFactor() {
+    public int getSpookyFactor(Context context) {
         return 0;
     }
 

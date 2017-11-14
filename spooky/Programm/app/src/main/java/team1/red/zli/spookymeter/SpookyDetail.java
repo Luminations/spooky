@@ -21,16 +21,21 @@ public class SpookyDetail extends Activity{
             super.handleMessage(msg);
             ArrayList<Integer> spookyDetails = (ArrayList<Integer>) msg.obj;
 
+            //time
             ProgressBar timeProgress = findViewById(R.id.progressBar2);
-            timeProgress.setMax(30);
+            timeProgress.setMax(12);
             timeProgress.setProgress(spookyDetails.get(5));
 
             TextView timeText = findViewById(R.id.textView3);
-            timeText.setText("Time " + spookyDetails.get(5) + "/12");
+            timeText.setText("Time " + spookyDetails.get(5) + "/" + "12");
 
+            //date
             ProgressBar dateProgres = findViewById(R.id.progressBar4);
-            dateProgres.setMax(30);
+            dateProgres.setMax(7);
             dateProgres.setProgress(spookyDetails.get(4));
+
+            TextView dateText = findViewById(R.id.textView5);
+            dateText.setText("Date " + spookyDetails.get(4) + "/" + "7");
         }
     };
 
@@ -39,7 +44,7 @@ public class SpookyDetail extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spooky_detail);
 
-        SpookyThread spookyFactorThread = new SpookyThread(handler);
+        SpookyThread spookyFactorThread = new SpookyThread(handler, this);
         spookyFactorThread.start();
 
     }

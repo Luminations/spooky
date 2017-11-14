@@ -4,13 +4,15 @@ package team1.red.zli.spookymeter.SpookyFactors;
  * Created by admin on 13.11.2017.
  */
 
+import android.content.Context;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class SpookyDate implements SpookyFactor {
     @Override
-    public int getSpookyFactor() {
+    public int getSpookyFactor(Context context) {
         int spookyFactor = 0;
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM");

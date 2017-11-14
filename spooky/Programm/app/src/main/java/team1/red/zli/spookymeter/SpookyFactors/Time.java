@@ -3,12 +3,14 @@ package team1.red.zli.spookymeter.SpookyFactors;
 /**
  * Created by admin on 13.11.2017.
  */
+import android.content.Context;
+
 import java.util.Calendar;
 import java.util.Date;
 
 public class Time implements SpookyFactor {
     @Override
-    public int getSpookyFactor() {
+    public int getSpookyFactor(Context context) {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_MONTH, 1);
         c.set(Calendar.HOUR_OF_DAY, 0);
@@ -16,8 +18,9 @@ public class Time implements SpookyFactor {
         c.set(Calendar.SECOND, 0);
         c.set(Calendar.MILLISECOND, 0);
         long howMany = (c.getTimeInMillis()-System.currentTimeMillis());
-
-        return (int) (12 -(((howMany / 1000) / 60) / 60));
+        int time = (int) (12 -(((howMany / 1000) / 60) / 60));
+        if (time < 0) time *= -1;
+        return time;
     }
 
 

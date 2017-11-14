@@ -1,5 +1,6 @@
 package team1.red.zli.spookymeter;
 
+import android.content.Context;
 import android.os.Handler;
 
 import java.util.ArrayList;
@@ -22,8 +23,10 @@ public class SpookyThread extends Thread{
     ArrayList<SpookyFactor> spookyFactors;
     ArrayList<Integer> spookyDetails;
     int spookyness;
-    SpookyThread(Handler handler) {
+    Context context;
+    SpookyThread(Handler handler, Context context) {
         this.handler = handler;
+        this.context = context;
         spookyDetails = new ArrayList<>();
         spookyFactors = new ArrayList<>();
         spookyFactors.add(new BatteryLifetime());
@@ -40,7 +43,7 @@ public class SpookyThread extends Thread{
             spookyness = 0;
 
             for (int i = 0; i < spookyFactors.size(); i++){
-                int spookyAmount = spookyFactors.get(i).getSpookyFactor();
+                int spookyAmount = spookyFactors.get(i).getSpookyFactor(context);
                 spookyness += spookyAmount;
                 spookyDetails.add(spookyAmount);
             }
