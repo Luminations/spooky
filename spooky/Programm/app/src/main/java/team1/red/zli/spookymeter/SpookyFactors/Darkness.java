@@ -48,6 +48,9 @@ public class Darkness implements SpookyFactor {
 
             if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
                 float currentReading = event.values[0];
+                if(currentReading == 0){
+                    currentReading = 1;
+                }
                 value = (int) (100/currentReading);
             }
         }
