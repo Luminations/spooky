@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import team1.red.zli.spookymeter.SpookyFactors.SpookyFactor;
-
+//test
 public class MainActivity extends AppCompatActivity {
     private final Handler handler = new Handler(){
         @Override
