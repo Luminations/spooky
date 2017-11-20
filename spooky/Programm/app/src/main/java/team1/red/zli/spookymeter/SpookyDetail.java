@@ -24,10 +24,10 @@ public class SpookyDetail extends Activity{
             //time
             ProgressBar timeProgress = findViewById(R.id.progressBar2);
             timeProgress.setMax(72);
-            timeProgress.setProgress(spookyDetails.get(5));
+            timeProgress.setProgress(spookyDetails.get(4));
 
             TextView timeText = findViewById(R.id.textView3);
-            timeText.setText("Time " + spookyDetails.get(5) + "/" + "72");
+            timeText.setText("Time " + spookyDetails.get(4) + "/" + "72");
 
             //date
             ProgressBar dateProgres = findViewById(R.id.progressBar4);

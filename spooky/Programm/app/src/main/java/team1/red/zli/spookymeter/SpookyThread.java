@@ -32,7 +32,6 @@ public class SpookyThread extends Thread{
         spookyFactors.add(new BatteryLifetime());
         spookyFactors.add(new Darkness());
         spookyFactors.add(new SpookyLocation());
-        spookyFactors.add(new Sound());
         spookyFactors.add(new SpookyDate());
         spookyFactors.add(new Time());
     }
