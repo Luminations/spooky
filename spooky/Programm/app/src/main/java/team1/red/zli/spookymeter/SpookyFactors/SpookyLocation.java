@@ -51,7 +51,8 @@ public class SpookyLocation implements SpookyFactor{
                     System.err.print("fuck offfff");
                 }
             }
-            return (int)((Location)location.getResult()).getAltitude();
+            int locationint = 90 - (int)((Location)location.getResult()).getLatitude();
+            return locationint;
 
         } else {
 
