@@ -49,16 +49,18 @@
         app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="256dp"
-        android:layout_height="251dp"
-        android:layout_marginBottom="38dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginTop="71dp"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="242dp"
+        android:layout_height="311dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="49dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/vprogressbar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:srcCompat="@mipmap/knife_game_skeltal" />
 
 </android.support.constraint.ConstraintLayout>
