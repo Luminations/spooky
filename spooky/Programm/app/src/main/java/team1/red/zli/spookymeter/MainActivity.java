@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            TextView textView  = findViewById(R.id.textView);
-            textView.setText(String.valueOf(msg.what));
-
 
         }
     };
